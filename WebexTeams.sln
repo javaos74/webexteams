@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebexTeams", "WebexTeams\WebexTeams.csproj", "{51800338-7110-41A7-ADCA-7A509F2976AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51800338-7110-41A7-ADCA-7A509F2976AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51800338-7110-41A7-ADCA-7A509F2976AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51800338-7110-41A7-ADCA-7A509F2976AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51800338-7110-41A7-ADCA-7A509F2976AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F74C2588-6017-45D1-9107-1A3EE782199C}
+	EndGlobalSection
+EndGlobal
