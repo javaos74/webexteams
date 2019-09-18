@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace WebexTeams
 {
-
+    
     public class WebexTeamsMessage
     {
         public string id { get; set; }
@@ -86,8 +86,17 @@ namespace WebexTeams
                     return "image/gif";
                 case "BMP":
                     return "image/bmp";
+                case "XLSX":
+                case "XLS":
+                    return "application/vnd.ms-excel";
+                case "PPTX":
+                case "PPT":
+                    return "application/vnd.ms-powerpoint";
+                case "DOCX":
+                case "DOC":
+                    return "application/vnd.ms-word";
                 default:
-                    return "unkwonn";
+                    return "unknwon";
             }
         }
 

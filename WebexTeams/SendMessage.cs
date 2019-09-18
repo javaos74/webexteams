@@ -9,53 +9,56 @@ using System.Net.Http;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using WebexTeams.Properties;
+using System.Activities.Validation;
 
 namespace WebexTeams
 {
 
+    [LocalizedDisplayName(nameof(Resources.ActivityNameSendMessage))]
     public sealed class SendMessage : CodeActivity
     {
-        // Access Token.
-        [Category("Input")]
-        [DisplayName("Access Token")]
+        // Access Token 
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.AccessToken))]
         [RequiredArgument]
-        [Description("Input your webex team api access token here")]
+        [LocalizedDescription(nameof(Resources.AccessTokenDesc))]
         public InArgument<string> AccessToken { get; set; }
 
         // Room id 
-        [Category("Input")]
-        [DisplayName("Room Id")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.RoomId))]
         [RequiredArgument]
-        [Description("Input your room id")]
+        [LocalizedDescription(nameof(Resources.RoomIdDesc))]
         public InArgument<string> RoomId { get; set; }
 
         // Input message  
-        [Category("Input")]
-        [DisplayName("Input message")]
-        [Description("Input your message id")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.Message))]
+        [LocalizedDescription(nameof(Resources.MessageDesc))]
         public InArgument<string> Text { get; set; }
 
         // Images 
-        [Category("Input")]
-        [DisplayName("Local file path")]
-        [Description("Input your file path")]
+        [LocalizedCategory(nameof(Resources.Input))]
+        [LocalizedDisplayName(nameof(Resources.LocalFile))]
+        [LocalizedDescription(nameof(Resources.LocalFileDesc))]
         public InArgument<string> FilePath { get; set; }
 
         // error code 
-        [Category("Output")]
-        [DisplayName("Error code")]
-        [Description("Error code if success 200 otherwise error code ")]
+        [LocalizedCategory(nameof(Resources.Output))]
+        [LocalizedDisplayName(nameof(Resources.ErrorCode))]
+        [LocalizedDescription(nameof(Resources.ErrorCodeDesc))]
         public OutArgument<int> ErrorCode { get; set; }
 
         // error message 
-        [Category("Output")]
-        [DisplayName("Error message")]
-        [Description("Error message if error code is not 0 ")]
+        [LocalizedCategory(nameof(Resources.Output))]
+        [LocalizedDisplayName(nameof(Resources.ErrorMessage))]
+        [LocalizedDescription(nameof(Resources.ErrorMessageDesc))]
         public OutArgument<string> ErrorMessage { get; set; }
 
-        [Category("Output")]
-        [DisplayName("Created message")]
-        [Description("New message")]
+        [LocalizedCategory(nameof(Resources.Output))]
+        [LocalizedDisplayName(nameof(Resources.NewMessageDesc))]
+        [LocalizedDescription(nameof(Resources.NewMessageDesc))]
         public OutArgument<WebexTeamsMessage> Message { get; set; }
 
 
@@ -78,6 +81,16 @@ namespace WebexTeams
             context.SetValue(this.ErrorCode, errorCode);
             context.SetValue(this.ErrorMessage, errorMessage);
             context.SetValue(this.Message, message);
+        }
+
+
+        protected override void CacheMetadata(CodeActivityMetadata metadata)
+        {
+            base.CacheMetadata(metadata);
+            if( this.Text == null && this.FilePath == null)
+            {
+                metadata.AddValidationError(new ValidationError(string.Format(Resources.ValidateErrorDesc, Resources.Message, Resources.LocalFile)));
+            }
         }
     }
 }
