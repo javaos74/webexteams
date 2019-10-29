@@ -18,15 +18,23 @@
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
-      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>WebexTeams</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>WorkflowConsoleApplication</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <w:ListRooms AccessToken="{x:Null}" ErrorCode="{x:Null}" ErrorMessage="{x:Null}" Rooms="{x:Null}" sap2010:WorkflowViewState.IdRef="ListRooms_1" sads:DebugSymbol.Symbol="d1xDOlxVc2Vyc1xoeXVuZ3Nvby5raW1cV29ya3NwYWNlc1xNeXdvcmtcV2ViZXhUZWFtc1xXb3JrZmxvd0NvbnNvbGVBcHBsaWNhdGlvblxXb3JrZmxvdzEueGFtbAEdAx3IAQIBAQ==" />
+  <w:ListRooms ErrorCode="{x:Null}" ErrorMessage="{x:Null}" Rooms="{x:Null}" AccessToken="xxxx" sap2010:WorkflowViewState.IdRef="ListRooms_1" sads:DebugSymbol.Symbol="d0lDOlxXb3Jrc3BhY2VzXE15d29ya1xXZWJleFRlYW1zXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uXFdvcmtmbG93MS54YW1sAiUDJcQBAgEBJVolYAIBAg==" />
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
       <sap2010:ViewStateData Id="ListRooms_1" sap:VirtualizedContainerService.HintSize="200,22" />
